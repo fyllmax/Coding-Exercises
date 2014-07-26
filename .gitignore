@@ -42,3 +42,6 @@ nosetests.xml
 [Ll]ib
 [Ss]cripts
 env
+
+node_modules/
+bower_components/
