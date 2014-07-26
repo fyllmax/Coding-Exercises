@@ -1,11 +1,7 @@
 {
-  "name": "Hack Bulgaria Team Matcher",
+  "name": "Team Matcher",
   "version": "0.0.0",
-  "homepage": "https://github.com/lostm1nd/HackBulgaria",
-  "authors": [
-    "Deyan Yanakiev <kliomba@abv.bg>"
-  ],
-  "description": "Forming teams from students that are currently attending the course",
+  "homepage": "https://github.com/fyllmax/Coding-Exercises/",
   "moduleType": [
     "globals"
   ],
