@@ -1,0 +1,126 @@
+#wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background-color: #eee;
+}
+
+.red {
+    color: #f00;
+}
+
+/*FILTER MENU STYLING START*/
+#filter-menu {
+    text-align: center;
+    background-color: #666;
+    padding: 10px 15px;
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-bottom: 25px;
+}
+
+#filter-menu select {
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+    margin-left: 1%;
+}
+
+#filter-menu button {
+    width: 10%;
+    min-width: 90px;
+    padding: 10px 15px;
+    margin: 0;
+    margin-left: 1%;
+}
+
+#filter-menu .error-message {
+    display: none;
+    margin: 15px -15px 0 -15px;
+}
+
+#filter-menu .group-menu {
+    display: none;
+    margin: 15px 0 0 0;
+}
+
+#filter-menu .group-menu span {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+#filter-menu .group-menu input {
+    display: inline-block;
+    width: 10%;
+    margin: 0;
+}
+/*FILTER MENU STYLING END*/
+
+/*ROW STYLING START*/
+.row {
+    position: relative;
+    text-align: center;
+    padding-top: 1.5%;
+    border-bottom: 1px solid #999;
+}
+
+.row:last-child {
+    border-bottom: 0;
+}
+
+.row p {
+    margin-bottom: 0;
+}
+
+.row .name {
+    width: 40%;
+}
+
+.row .team {
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: bold;
+    top: 0;
+    left: 5px;
+    -webkit-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+
+.row .git {
+    width: 15%;
+}
+
+.row .courses {
+    width: 40%;
+}
+
+.row .available {
+    width: 5%;
+}
+
+.hovered-row {
+    background-color: rgba(150, 200, 25, 0.35);
+}
+/*ROW STYLING END*/
+
+/*MEDIA QUERIES START*/
+@media only screen and (max-width: 960px) {
+    #filter-menu select {
+        width: 45%;
+        margin-bottom: 1%;
+    }
+
+    #filter-menu button {
+        width: 15%;
+    }
+
+}
+
+@media only screen and (max-width: 680px) {
+    #wrapper {
+        width: 100%;
+    }
+}
+/*ROW STYLING END*/
