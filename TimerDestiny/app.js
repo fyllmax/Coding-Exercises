@@ -7,6 +7,7 @@ $(document).ready(function () {
   var time;
   var index;
   var count;
+  var counting;
 
   function getTime () {
 
@@ -22,7 +23,8 @@ $(document).ready(function () {
     return totalTime;
   }
 
-  function count_up() {
+  function countUp() {
+    counting = true;
     index ++;
     // console.log(index);
     $("#second-digit").text(index)
@@ -32,7 +34,8 @@ $(document).ready(function () {
     }
   }
 
-  function count_down() {
+  function countDown() {
+    counting = true;
     index --;
     // console.log(index);
     var mins = parseInt(index / 60);
@@ -44,21 +47,38 @@ $(document).ready(function () {
     }
   }
 
+  function clear () {
+
+    clearInterval(count)
+    $("#minutes").val("")
+    $("#seconds").val("");
+    $("#minute-digit").text("00")
+    $("#second-digit").text("00")
+    counting = false;
+  }
+
   $("#count-up").on("click", function () {
     index = 0;
     time = getTime();
-    count = setInterval(count_up, interval);
+    if (!counting) {
+      count = setInterval(countUp, interval);
+    }
+    else {clear()}
+
   });
 
   $("#count-down").on("click", function () {
     time = getTime();
     index = time.inSeconds;
-    count = setInterval(count_down, interval);
+    if (!counting) {
+      count = setInterval(countDown, interval);
+    }
+    else {clear()}
   });
 
-  // $(".btn-danger").on("click", function () {
-
-  // });
+  $(".btn-danger").on("click", function () {
+    clear()
+  });
 
 
 
