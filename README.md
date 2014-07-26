@@ -1,4 +1,4 @@
 exercises
 =========
 
-some coding with python 
+some coding exercises
