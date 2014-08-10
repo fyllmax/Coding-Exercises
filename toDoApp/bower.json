@@ -1,0 +1,21 @@
+{
+  "name": "To Do Task Manager",
+  "version": "0.0.0",
+  "authors": [
+    "fyllmax <andi_77@abv.bg>"
+  ],
+  "description": "hackbulgaria week5 problem",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0"
+  }
+}
