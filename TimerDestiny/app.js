@@ -1,3 +1,4 @@
+/* global $:true, alert: true */
 
 "use strict";
 
@@ -8,6 +9,8 @@ $(document).ready(function () {
   var index;
   var count;
   var counting;
+  var mins;
+  var sec;
 
   function getTime () {
 
@@ -26,8 +29,18 @@ $(document).ready(function () {
   function countUp() {
     counting = true;
     index ++;
-    // console.log(index);
-    $("#second-digit").text(index)
+    sec = index;
+    mins = Math.floor(index / 60);
+
+    if (sec < 10) {sec = "0" + sec;}
+    else if (sec <= 59) {sec = sec;}
+    else {sec = index - (mins * 60);}
+
+    if (mins < 10) {mins = "0" + mins;}
+
+    $("#second-digit").text(sec);
+    $("#minute-digit").text(mins);
+
     if (index === time.inSeconds) {
       clearInterval(count);
       alert("Game Over");
@@ -37,10 +50,14 @@ $(document).ready(function () {
   function countDown() {
     counting = true;
     index --;
-    // console.log(index);
     var mins = parseInt(index / 60);
-    $("#minute-digit").text(mins)
-    $("#second-digit").text(index%60)
+    $("#minute-digit").text(mins);
+    if (index >= 10) {
+      $("#second-digit").text(index % 60);
+    }
+    else {
+      $("#second-digit").text("0" + index % 60);
+    }
     if (index === 0) {
       clearInterval(count);
     alert("Game Over");
@@ -49,11 +66,11 @@ $(document).ready(function () {
 
   function clear () {
 
-    clearInterval(count)
-    $("#minutes").val("")
+    clearInterval(count);
+    $("#minutes").val("");
     $("#seconds").val("");
-    $("#minute-digit").text("00")
-    $("#second-digit").text("00")
+    $("#minute-digit").text("00");
+    $("#second-digit").text("00");
     counting = false;
   }
 
@@ -63,7 +80,7 @@ $(document).ready(function () {
     if (!counting) {
       count = setInterval(countUp, interval);
     }
-    else {clear()}
+    else {clear();}
 
   });
 
@@ -73,13 +90,11 @@ $(document).ready(function () {
     if (!counting) {
       count = setInterval(countDown, interval);
     }
-    else {clear()}
+    else {clear();}
   });
 
   $(".btn-danger").on("click", function () {
-    clear()
+    clear();
   });
-
-
 
 });
